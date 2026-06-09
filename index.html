@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Luis Andres Ixta</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Roboto+Serif:wght@300;400&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --slate:#1c1c1e;
+    --slate2:#242426;
+    --charcoal:#2e2e30;
+    --warm:#3a3835;
+    --gold:#c9a84c;
+    --gold-light:#e8c96d;
+    --offwhite:#f5f2ec;
+    --text-muted:#8a8880;
+    --text-light:#bab8b4;
+    --border:#3a3835;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--slate);color:var(--offwhite);font-family:'Roboto',sans-serif;line-height:1.7;overflow-x:hidden;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,28,30,0.93);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.12);}
+  .nav-brand{font-family:'Roboto Serif',serif;font-size:1rem;font-weight:300;letter-spacing:0.06em;color:var(--offwhite);}
+  .nav-brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{color:var(--text-light);text-decoration:none;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--gold);}
+
+  section{padding:6rem 3rem;}
+  .container{max-width:1080px;margin:0 auto;}
+
+  /* HERO */
+  #hero{min-height:100vh;display:flex;align-items:center;padding-top:8rem;background:linear-gradient(150deg,var(--slate) 55%,#252320 100%);position:relative;overflow:hidden;}
+  #hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(201,168,76,0.05) 0%,transparent 65%);}
+  .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;width:100%;}
+  .hero-eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0.85;}
+  .hero-name{font-family:'Roboto Serif',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--offwhite);margin-bottom:1.2rem;}
+  .hero-divider{width:2.5rem;height:1px;background:var(--gold);margin:1.5rem 0;opacity:0.5;}
+  .hero-desc{font-size:1rem;color:var(--text-light);line-height:1.85;max-width:460px;margin-bottom:2.2rem;}
+  .hero-desc em{color:var(--offwhite);font-style:normal;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+  .btn-primary{display:inline-block;padding:0.8rem 2rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
+  .btn-primary:hover{background:var(--gold);color:var(--slate);}
+  .btn-ghost{display:inline-block;padding:0.8rem 2rem;border:1px solid var(--border);color:var(--text-light);text-decoration:none;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
+  .btn-ghost:hover{border-color:var(--text-light);color:var(--offwhite);}
+  .hero-photo-wrap{display:flex;justify-content:flex-end;position:relative;}
+  .hero-photo-frame{width:360px;height:440px;position:relative;overflow:hidden;}
+  .hero-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);}
+  .hero-photo-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(to top,var(--slate),transparent);}
+  .photo-accent{position:absolute;bottom:-1px;right:-1px;width:60%;height:60%;border-right:1px solid rgba(201,168,76,0.25);border-bottom:1px solid rgba(201,168,76,0.25);pointer-events:none;}
+
+  /* SECTION LABELS */
+  .section-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;opacity:0.85;}
+  .section-title{font-family:'Roboto Serif',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:300;line-height:1.2;margin-bottom:1.2rem;color:var(--offwhite);}
+  .section-divider{width:2rem;height:1px;background:var(--gold);opacity:0.5;margin-bottom:2.5rem;}
+
+  /* WHAT I DO */
+  #disciplines{background:var(--slate2);}
+  .disciplines-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;}
+  .discipline{background:var(--slate2);padding:2.5rem 2rem;transition:background 0.3s;}
+  .discipline:hover{background:var(--warm);}
+  .discipline-icon{font-size:1.4rem;margin-bottom:1.2rem;display:block;}
+  .discipline-title{font-family:'Roboto Serif',serif;font-size:1.1rem;font-weight:400;color:var(--offwhite);margin-bottom:0.8rem;}
+  .discipline-desc{font-size:0.88rem;color:var(--text-muted);line-height:1.8;}
+
+  /* VENTURES */
+  #ventures{background:var(--slate);}
+  .ventures-intro{font-size:0.95rem;color:var(--text-light);max-width:520px;line-height:1.8;margin-bottom:3rem;}
+  .ventures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+  .venture-card{background:var(--slate2);border:1px solid var(--border);padding:2rem 2rem 1.8rem;text-decoration:none;display:block;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden;}
+  .venture-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px);}
+  .venture-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height 0.4s;}
+  .venture-card:hover::before{height:100%;}
+  .venture-tag{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;opacity:0.8;}
+  .venture-name{font-family:'Roboto Serif',serif;font-size:1.15rem;font-weight:400;color:var(--offwhite);margin-bottom:0.6rem;}
+  .venture-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.2rem;}
+  .venture-link{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.5rem;}
+  .venture-link::after{content:'→';transition:transform 0.3s;}
+  .venture-card:hover .venture-link::after{transform:translateX(4px);}
+  .venture-soon{display:inline-block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:rgba(201,168,76,0.1);color:var(--gold);border:1px solid rgba(201,168,76,0.25);padding:0.2rem 0.6rem;margin-left:0.6rem;vertical-align:middle;}
+
+  /* BIO */
+  #bio{background:var(--slate2);}
+  .bio-inner{display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start;}
+  .bio-aside{position:sticky;top:7rem;}
+  .bio-aside-name{font-family:'Roboto Serif',serif;font-size:1.3rem;font-weight:300;color:var(--offwhite);line-height:1.4;margin-bottom:1rem;}
+  .bio-aside-loc{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);}
+  .bio-aside-loc span{color:var(--gold);}
+  .bio-text p{color:var(--text-light);font-size:0.97rem;line-height:1.95;margin-bottom:1.3rem;}
+  .bio-text p:first-of-type{font-size:1.05rem;color:var(--offwhite);}
+  .bio-contact{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);}
+  .bio-contact-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem;}
+  .bio-contact-value{font-size:0.95rem;color:var(--gold);}
+
+  /* FOOTER */
+  footer{background:var(--charcoal);padding:2rem 3rem;border-top:1px solid var(--border);}
+  .footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+  .footer-name{font-family:'Roboto Serif',serif;font-size:0.9rem;font-weight:300;color:var(--offwhite);}
+  .footer-copy{font-size:0.72rem;color:var(--text-muted);}
+
+  @media(max-width:768px){
+    nav{padding:1rem 1.5rem;}
+    .nav-links{display:none;}
+    section{padding:4rem 1.5rem;}
+    .hero-inner,.disciplines-grid,.ventures-grid,.bio-inner{grid-template-columns:1fr;}
+    .hero-photo-wrap{display:none;}
+    .footer-inner{flex-direction:column;gap:1rem;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Luis Andres <span>Ixta</span></div>
+  <ul class="nav-links">
+    <li><a href="#disciplines">What I Do</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#bio">About</a></li>
+    <li><a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank">Book a Call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Financial Consultant · Designer · Builder</p>
+        <h1 class="hero-name">Luis Andres<br/>Ixta</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-desc">I help people <em>build wealth, live intentionally,</em> and <em>create things that last</em> — through financial strategy, design, and a relentless focus on what actually moves the needle.</p>
+        <div class="hero-actions">
+          <a href="#ventures" class="btn-primary">Explore My Work</a>
+          <a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank" class="btn-ghost">Book a Call</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <img src="https://drive.google.com/uc?export=view&id=1QW9JBIYKleMHL2dyVbcsCuhUclpHQI33" alt="Luis Andres Ixta"/>
+        </div>
+        <div class="photo-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="disciplines">
+  <div class="container">
+    <p class="section-label">What I Do</p>
+    <h2 class="section-title">Three Disciplines, One Direction</h2>
+    <div class="section-divider"></div>
+    <div class="disciplines-grid">
+      <div class="discipline">
+        <span class="discipline-icon">◈</span>
+        <h3 class="discipline-title">Financial Consulting</h3>
+        <p class="discipline-desc">Debt elimination, tax mitigation, and retirement optimization for high-income professionals and business owners who want to keep more of what they earn.</p>
+      </div>
+      <div class="discipline">
+        <span class="discipline-icon">◻</span>
+        <h3 class="discipline-title">Design</h3>
+        <p class="discipline-desc">Thoughtful design work through Studio Ixta — visual identity, space, and brand systems built with the same precision I bring to financial strategy.</p>
+      </div>
+      <div class="discipline">
+        <span class="discipline-icon">◇</span>
+        <h3 class="discipline-title">Consulting</h3>
+        <p class="discipline-desc">Business structuring, operational strategy, and advisory work for entrepreneurs and professionals building something worth building.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="container">
+    <p class="section-label">Ventures</p>
+    <h2 class="section-title">Where to Find Me</h2>
+    <div class="section-divider"></div>
+    <p class="ventures-intro">Each of these represents a different dimension of the work — all connected by the same commitment to quality, clarity, and results.</p>
+    <div class="ventures-grid">
+      <a href="https://livebuildprosper.com" target="_blank" class="venture-card">
+        <p class="venture-tag">Financial Consulting</p>
+        <h3 class="venture-name">Live. Build. Prosper. LLC</h3>
+        <p class="venture-desc">My financial consulting practice — helping clients eliminate debt, reduce taxes, and build lasting wealth through focused, personalized strategy.</p>
+        <span class="venture-link">Visit Site</span>
+      </a>
+      <a href="#" class="venture-card">
+        <p class="venture-tag">Design <span class="venture-soon">Coming Soon</span></p>
+        <h3 class="venture-name">Studio Ixta</h3>
+        <p class="venture-desc">A design practice for clients who understand that how something looks is as important as how it works. Reopening soon.</p>
+        <span class="venture-link">Coming Soon</span>
+      </a>
+      <a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank" class="venture-card">
+        <p class="venture-tag">Work Together</p>
+        <h3 class="venture-name">Book a Call</h3>
+        <p class="venture-desc">If you're a CPA, realtor, or professional curious about working together — or a client ready to take the next step — let's talk.</p>
+        <span class="venture-link">Schedule a Time</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="container">
+    <div class="bio-inner">
+      <div class="bio-aside">
+        <p class="section-label">About</p>
+        <h2 class="bio-aside-name">Luis Andres Ixta</h2>
+        <p class="bio-aside-loc">San Fernando Valley<br/><span>California</span></p>
+      </div>
+      <div class="bio-text">
+        <p>I'm a financial consultant, designer, and builder based in the San Fernando Valley. My work sits at the intersection of strategy and craft — whether I'm helping a homeowner accelerate their mortgage payoff or building a brand identity from the ground up.</p>
+        <p>My consulting practice, Live. Build. Prosper. LLC, focuses on three things that move the needle for high-income professionals: paying off debt faster, reducing tax liability, and building retirement wealth. I work closely with CPAs, realtors, and mortgage professionals to make sure every strategy is coordinated and complete.</p>
+        <p>Outside of financial consulting, I run Studio Ixta — a design practice currently being relaunched. I believe that design and finance are closer than most people think. Both are about making smart decisions with limited resources to build something that endures.</p>
+        <div class="bio-contact">
+          <p class="bio-contact-label">Get in touch</p>
+          <p class="bio-contact-value">luis@luisandresixta.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Luis Andres Ixta</span>
+    <span class="footer-copy">© 2025 · San Fernando Valley, CA · All rights reserved</span>
+  </div>
+</footer>
+
+</body>
+</html>
