@@ -6,7 +6,8 @@
 <title>Luis Andres Ixta</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/reglo" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
@@ -19,15 +20,15 @@
     --text-muted:#8a8880;
     --text-light:#bab8b4;
     --border:#3a3835;
-    --sans:'Hanken Grotesk',sans-serif;
-    --serif:'Roboto Serif',serif;
+    --sans:'Bricolage Grotesque',sans-serif;
+    --display:'Reglo',sans-serif;
   }
   html{scroll-behavior:smooth;}
   body{background:var(--slate);color:var(--offwhite);font-family:var(--sans);line-height:1.7;overflow-x:hidden;}
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,28,30,0.93);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.12);}
-  .nav-brand{font-family:var(--sans);font-size:1.25rem;font-weight:300;letter-spacing:0.06em;color:var(--offwhite);}
+  .nav-brand{font-family:var(--display);font-size:1.1rem;font-weight:700;letter-spacing:0.18em;color:var(--offwhite);text-transform:uppercase;}
   .nav-brand span{color:var(--gold);}
   .nav-links{display:flex;gap:2.5rem;list-style:none;}
   .nav-links a{color:var(--text-light);text-decoration:none;font-family:var(--sans);font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s;}
@@ -43,7 +44,7 @@
   .hero-left{max-width:580px;}
   .hero-eyebrow{font-family:var(--sans);font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.8rem;line-height:2.2;display:flex;flex-direction:column;gap:0.15rem;}
   .hero-eyebrow span{color:var(--gold);}
-  .hero-tagline{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2.1rem);font-weight:300;line-height:1.25;color:var(--offwhite);margin-bottom:1.8rem;}
+  .hero-tagline{font-family:var(--sans);font-size:clamp(1.4rem,2.6vw,2.1rem);font-weight:300;line-height:1.25;color:var(--offwhite);margin-bottom:1.8rem;}
   .hero-tagline em{color:var(--gold);font-style:normal;}
   .hero-divider{width:2.5rem;height:1px;background:var(--gold);margin:1.5rem 0;opacity:0.5;}
   .hero-actions{display:flex;justify-content:flex-start;margin-top:2rem;}
@@ -57,7 +58,7 @@
 
   /* SECTION LABELS */
   .section-label{font-family:var(--sans);font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;opacity:0.85;}
-  .section-title{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:300;line-height:1.2;margin-bottom:1.2rem;color:var(--offwhite);}
+  .section-title{font-family:var(--display);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:700;line-height:1.2;margin-bottom:1.2rem;color:var(--offwhite);}
   .section-divider{width:2rem;height:1px;background:var(--gold);opacity:0.5;margin-bottom:2.5rem;}
 
   /* PRACTICE SECTIONS */
@@ -65,7 +66,7 @@
   .practice-financial{background:var(--slate2);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);}
   .practice-construction{background:var(--slate);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);}
   .practice-container{max-width:1080px;margin:0 auto;}
-  .practice-title{font-family:var(--serif);font-size:clamp(2.2rem,3.5vw,3rem);font-weight:300;color:var(--offwhite);line-height:1.2;margin-bottom:0.4rem;}
+  .practice-title{font-family:var(--display);font-size:clamp(2.2rem,3.5vw,3rem);font-weight:700;color:var(--offwhite);line-height:1.2;margin-bottom:0.4rem;}
   .practice-tag{display:inline-block;font-family:var(--sans);font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;opacity:0.8;}
   .practice-rule{width:2rem;height:1px;background:var(--gold);opacity:0.4;margin-bottom:2.5rem;}
   .practice-copy{margin-bottom:2rem;}
@@ -85,7 +86,7 @@
   .venture-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px);}
   .venture-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height 0.4s;}
   .venture-card:hover::before{height:100%;}
-  .venture-name{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--offwhite);margin-bottom:0.6rem;}
+  .venture-name{font-family:var(--display);font-size:1.1rem;font-weight:700;color:var(--offwhite);margin-bottom:0.6rem;}
   .venture-desc{font-family:var(--sans);font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.2rem;}
   .venture-link{font-family:var(--sans);font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.5rem;}
   .venture-link::after{content:'→';transition:transform 0.3s;}
@@ -108,7 +109,7 @@
   /* FOOTER */
   footer{background:var(--charcoal);padding:2rem 3rem;border-top:1px solid var(--gold);}
   .footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:center;}
-  .footer-copy{font-family:var(--sans);font-size:0.72rem;color:var(--text-muted);text-align:center;}
+  .footer-copy{font-family:var(--display);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;color:var(--text-muted);text-align:center;text-transform:uppercase;}
 
   @media(max-width:768px){
     nav{padding:1rem 1.5rem;}
