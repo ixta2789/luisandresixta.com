@@ -48,7 +48,7 @@
   #hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(201,168,76,0.06) 0%,transparent 65%);}
   .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;width:100%;}
   .hero-left{max-width:580px;}
-  .hero-eyebrow{font-family:var(--sans);font-size:1.14rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.8rem;line-height:1.6;display:flex;flex-direction:column;gap:0.15rem;font-weight:400;}
+  .hero-eyebrow{font-family:var(--sans);font-size:1.083rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.8rem;line-height:1.6;display:flex;flex-direction:column;gap:0.15rem;font-weight:400;}
   .hero-eyebrow .white{color:var(--offwhite);}
   .hero-eyebrow .gold{color:var(--gold);}
   .hero-tagline{font-family:var(--sans);font-size:clamp(1.38rem,2.53vw,2.08rem);font-weight:300;line-height:1.35;color:var(--offwhite);margin-bottom:1.8rem;}
@@ -75,7 +75,7 @@
   /* PRACTICE SECTIONS */
   .practice{padding:7rem 3rem;}
   .practice-container{max-width:1080px;margin:0 auto;}
-  .practice-title{font-family:var(--display);font-size:clamp(2.2rem,3.5vw,3rem);font-weight:700;color:var(--offwhite);line-height:1.1;margin-bottom:0;}
+  .practice-title{font-family:var(--display);font-size:clamp(2rem,3.2vw,2.7rem);font-weight:700;color:var(--offwhite);line-height:1.1;margin-bottom:0;}
   .practice-rule{width:100%;height:1px;background:var(--gold);opacity:0.45;margin-bottom:1.2rem;}
   .practice-copy{margin-bottom:1.5rem;}
   .practice-copy p{font-family:var(--sans);font-size:0.93rem;color:var(--text-mid);line-height:1.95;margin-bottom:1.2rem;}
@@ -123,9 +123,36 @@
   @media(max-width:768px){
     nav{padding:1rem 1.5rem;}
     .nav-links{display:none;}
-    section,.practice{padding:4rem 1.5rem;}
-    .hero-inner,.ventures-grid,.bio-inner{grid-template-columns:1fr;}
+    section,.practice{padding:3.5rem 1.5rem;}
+
+    /* HERO */
+    #hero{padding-top:6rem;min-height:auto;}
+    .hero-inner{grid-template-columns:1fr;gap:2.5rem;}
     .hero-image-wrap{display:none;}
+    .hero-eyebrow{font-size:0.85rem;gap:0.4rem;}
+    .hero-tagline{font-size:1.1rem;}
+    .hero-left{max-width:100%;}
+
+    /* PRACTICE SECTIONS */
+    .practice{padding:3.5rem 1.5rem;}
+    .practice-inner-grid{grid-template-columns:1fr !important;gap:2.5rem !important;}
+    .practice-title{font-size:2rem;}
+    .practice-image-col{order:2;}
+    .practice-text-col{order:1;}
+
+    /* VENTURES */
+    .ventures-grid-top{grid-template-columns:1fr;}
+    .ventures-grid-bottom .venture-card{width:100%;}
+
+    /* BIO */
+    .bio-inner{grid-template-columns:1fr;gap:2.5rem;}
+    .bio-photo-frame{aspect-ratio:4/3;}
+
+    /* SECTION TITLES */
+    .section-title{font-size:1.6rem;}
+
+    /* FOOTER */
+    .footer-inner{padding:0 1.5rem;}
   }
 </style>
 </head>
@@ -147,19 +174,16 @@
     <div class="hero-inner">
       <div class="hero-left">
         <p class="hero-eyebrow">
-          <span class="white">Financial Strategy</span>
-          <span class="white">Operational Consulting</span>
-          <span class="gold">Construction</span>
+          <span><span class="gold">Financial</span> <span class="white">Strategy</span></span>
+          <span><span class="gold">Operational</span> <span class="white">Consulting</span></span>
+          <span><span class="gold">Construction</span> <span class="white">Management</span></span>
         </p>
         <div class="hero-divider"></div>
         <h1 class="hero-tagline">I help business owners and high earners <em>protect capital, reduce tax exposure,</em> and build the <em>operational infrastructure to scale.</em></h1>
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-frame">
-          <div class="hero-placeholder-text">
-            <span class="hero-placeholder-icon">⬜</span>
-            Hero Image
-          </div>
+          <img src="images/Concrete Contrast Hero.jpg" alt="Hero" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
         <div class="photo-accent"></div>
       </div>
@@ -170,8 +194,8 @@
 <!-- PRACTICE 01: FINANCIAL -->
 <div class="practice practice-financial section-accent" id="practice-financial">
   <div class="practice-container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
-      <div>
+    <div class="practice-inner-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div class="practice-text-col">
         <h2 class="practice-title">Financial & Business Consulting</h2>
         <div class="practice-rule" style="margin-top:1.2rem;"></div>
         <div class="practice-copy">
@@ -189,7 +213,7 @@
           <li>Retirement optimization</li>
         </ul>
       </div>
-      <div style="display:flex;align-items:center;justify-content:center;">
+      <div class="practice-image-col" style="display:flex;align-items:center;justify-content:center;">
         <div style="width:100%;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--border);">
           <img src="images/Financial Consult_Hero Placehold.jpg" alt="Financial & Business Consulting" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
@@ -201,13 +225,13 @@
 <!-- PRACTICE 02: CONSTRUCTION -->
 <div class="practice practice-construction section-accent" id="practice-construction">
   <div class="practice-container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
-      <div style="display:flex;align-items:center;justify-content:center;">
+    <div class="practice-inner-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div class="practice-image-col" style="display:flex;align-items:center;justify-content:center;">
         <div style="width:100%;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--border);">
           <img src="images/Wood Beams_Hero Placehold.jpg" alt="Construction Project Management" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         </div>
       </div>
-      <div>
+      <div class="practice-text-col">
         <h2 class="practice-title">Construction<br/>Project Management</h2>
         <div class="practice-rule" style="margin-top:1.2rem;"></div>
         <div class="practice-copy">
