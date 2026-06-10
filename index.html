@@ -54,11 +54,10 @@
   .hero-tagline{font-family:var(--sans);font-size:clamp(1.38rem,2.53vw,2.08rem);font-weight:300;line-height:1.35;color:var(--offwhite);margin-bottom:1.8rem;}
   .hero-tagline em{color:var(--gold);font-style:normal;}
   .hero-divider{width:2.5rem;height:1px;background:var(--gold);margin:1.5rem 0;opacity:0.45;}
-  .hero-image-wrap{display:flex;justify-content:flex-end;position:relative;}
-  .hero-image-frame{width:380px;height:460px;position:relative;overflow:hidden;background:var(--slate2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
-  .hero-placeholder-text{text-align:center;color:var(--text-muted);font-family:var(--sans);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;}
-  .hero-placeholder-icon{font-size:2rem;color:var(--border);display:block;margin-bottom:0.75rem;}
-  .photo-accent{position:absolute;bottom:-1px;right:-1px;width:60%;height:60%;border-right:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);pointer-events:none;}
+  .hero-image-wrap{position:absolute;top:0;right:0;width:48%;height:100%;}
+  .hero-image-frame{width:100%;height:100%;overflow:hidden;background:var(--slate2);}
+  .hero-image-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-image-frame::after{content:'';position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(to right,var(--slate),transparent);pointer-events:none;}
 
   /* SECTION LABELS */
   .section-label{font-family:var(--sans);font-size:0.99rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;opacity:0.85;}
@@ -183,9 +182,8 @@
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-frame">
-          <img src="images/Concrete Contrast Hero.jpg" alt="Hero" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <img src="images/Concrete Contrast Hero.jpg" alt="Hero"/>
         </div>
-        <div class="photo-accent"></div>
       </div>
     </div>
   </div>
@@ -201,7 +199,7 @@
         <div class="practice-copy">
           <p>Most people are living so they can build. The problem is that building without the right structure doesn't produce prosperity — it produces more work.</p>
           <p>Small business owners know this. The focus goes to growth and revenue, but the structural knowledge required to actually get there — tax exposure, entity design, debt strategy — gets skipped. The result is learning by loss.</p>
-          <p>The work here is simple: identify what's missing and build the right structure for your size, your goals, and your situation. Most people never reach prosperity because they never stopped to build deliberately. That's the only thing worth fixing.</p>
+          <p>The work here is simple: identify what's missing and build the right structure for your size, your goals, and your situation.</p>
         </div>
         <div class="practice-pullquote">
           <p>Most people never reach prosperity because they never stopped to build deliberately. That's the only thing worth fixing.</p>
@@ -237,7 +235,7 @@
         <div class="practice-copy">
           <p>The same pattern shows up in construction. People are living, building — but the prosperity part gets lost somewhere between the contract and the closeout.</p>
           <p>Missed deadlines. Scope that expands without explanation. Clients left wondering what they're paying for. The industry tolerated this long enough that it became the expectation. It doesn't have to.</p>
-          <p>Fair pricing, clear documentation, honest communication, and a commitment to finishing what you started. A project delivered on time and on budget isn't exceptional. It's what was agreed to. That's the standard.</p>
+          <p>Fair pricing, clear documentation, honest communication, and a commitment to finishing what you started.</p>
         </div>
         <div class="practice-pullquote">
           <p>A project delivered on time and on budget isn't exceptional. It's what was agreed to. That's the standard.</p>
@@ -256,8 +254,7 @@
 <!-- VENTURES -->
 <section id="ventures" class="section-accent">
   <div class="container">
-    <p class="section-label">Ventures</p>
-    <h2 class="section-title">Where to Find Me</h2>
+    <h2 class="section-title">Ventures</h2>
     <div class="section-divider"></div>
     <p class="ventures-intro">Two active practices connected by the same operating philosophy — build things that last.</p>
     <div class="ventures-grid-top">
