@@ -48,16 +48,16 @@
   #hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(201,168,76,0.06) 0%,transparent 65%);}
   .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;width:100%;}
   .hero-left{max-width:580px;}
-  .hero-eyebrow{font-family:var(--sans);font-size:1.083rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.8rem;line-height:1.6;display:flex;flex-direction:column;gap:0.15rem;font-weight:400;}
+  .hero-eyebrow{font-family:var(--sans);font-size:1.137rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.8rem;line-height:1.6;display:flex;flex-direction:column;gap:0.15rem;font-weight:400;}
   .hero-eyebrow .white{color:var(--offwhite);}
   .hero-eyebrow .gold{color:var(--gold);}
   .hero-tagline{font-family:var(--sans);font-size:clamp(1.38rem,2.53vw,2.08rem);font-weight:300;line-height:1.35;color:var(--offwhite);margin-bottom:1.8rem;}
   .hero-tagline em{color:var(--gold);font-style:normal;}
-  .hero-divider{width:2.5rem;height:1px;background:var(--gold);margin:1.5rem 0;opacity:0.45;}
+  .hero-divider{width:calc(100% - 25px);height:1px;background:var(--gold);margin:1.5rem 0;opacity:0.45;}
   .hero-image-wrap{position:absolute;top:0;right:0;width:48%;height:100%;}
   .hero-image-frame{width:100%;height:100%;overflow:hidden;background:var(--slate2);}
   .hero-image-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-  .hero-image-frame::after{content:'';position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(to right,var(--slate),transparent);pointer-events:none;}
+  .hero-image-frame::after{content:'';position:absolute;top:0;left:0;width:25%;height:100%;background:linear-gradient(to right,rgba(28,28,30,0.7),transparent);pointer-events:none;}
 
   /* SECTION LABELS */
   .section-label{font-family:var(--sans);font-size:0.99rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;opacity:0.85;}
@@ -178,7 +178,7 @@
           <span><span class="gold">Construction</span> <span class="white">Management</span></span>
         </p>
         <div class="hero-divider"></div>
-        <h1 class="hero-tagline">I help business owners and high earners <em>protect capital, reduce tax exposure,</em> and build the <em>operational infrastructure to scale.</em></h1>
+        <h1 class="hero-tagline">I help business owners and high earners <em>protect capital,</em> reduce<br/><em>tax exposure,</em> and build the<br/><em>operational</em> <em>infrastructure</em> to scale.</h1>
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-frame">
