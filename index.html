@@ -14,7 +14,6 @@
     --charcoal:#2e2e30;
     --warm:#3a3835;
     --gold:#c9a84c;
-    --gold-light:#e8c96d;
     --offwhite:#f5f2ec;
     --text-muted:#8a8880;
     --text-light:#bab8b4;
@@ -25,7 +24,7 @@
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,28,30,0.93);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.12);}
-  .nav-brand{font-family:'Roboto Serif',serif;font-size:1rem;font-weight:300;letter-spacing:0.06em;color:var(--offwhite);}
+  .nav-brand{font-family:'Hanken Grotesk',sans-serif;font-size:1.25rem;font-weight:300;letter-spacing:0.06em;color:var(--offwhite);}
   .nav-brand span{color:var(--gold);}
   .nav-links{display:flex;gap:2.5rem;list-style:none;}
   .nav-links a{color:var(--text-light);text-decoration:none;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s;}
@@ -38,78 +37,94 @@
   #hero{min-height:100vh;display:flex;align-items:center;padding-top:8rem;background:linear-gradient(150deg,var(--slate) 55%,#252320 100%);position:relative;overflow:hidden;}
   #hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:radial-gradient(ellipse at 80% 40%,rgba(201,168,76,0.05) 0%,transparent 65%);}
   .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;width:100%;}
-  .hero-eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0.85;}
-  .hero-name{font-family:'Roboto Serif',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:300;line-height:1.1;color:var(--offwhite);margin-bottom:1.2rem;}
+  .hero-left{max-width:580px;}
+  .hero-eyebrow{font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-bottom:1.8rem;line-height:2.2;display:flex;flex-direction:column;gap:0.15rem;}
+  .hero-eyebrow span{color:var(--gold);}
+  .hero-eyebrow .sep{display:none;}
+  .hero-tagline{font-family:'Roboto Serif',serif;font-size:clamp(1.4rem,2.6vw,2.1rem);font-weight:300;line-height:1.25;color:var(--offwhite);margin-bottom:1.8rem;}
+  .hero-tagline em{color:var(--gold);font-style:normal;}
   .hero-divider{width:2.5rem;height:1px;background:var(--gold);margin:1.5rem 0;opacity:0.5;}
-  .hero-desc{font-size:1rem;color:var(--text-light);line-height:1.85;max-width:460px;margin-bottom:2.2rem;}
-  .hero-desc em{color:var(--offwhite);font-style:normal;}
-  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
-  .btn-primary{display:inline-block;padding:0.8rem 2rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
+  .hero-actions{display:flex;justify-content:flex-start;margin-top:2rem;}
+  .btn-primary{display:inline-block;padding:0.75rem 2.2rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
   .btn-primary:hover{background:var(--gold);color:var(--slate);}
-  .btn-ghost{display:inline-block;padding:0.8rem 2rem;border:1px solid var(--border);color:var(--text-light);text-decoration:none;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;}
-  .btn-ghost:hover{border-color:var(--text-light);color:var(--offwhite);}
-  .hero-photo-wrap{display:flex;justify-content:flex-end;position:relative;}
-  .hero-photo-frame{width:360px;height:440px;position:relative;overflow:hidden;}
-  .hero-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);}
-  .hero-photo-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(to top,var(--slate),transparent);}
-  .photo-accent{position:absolute;bottom:-1px;right:-1px;width:60%;height:60%;border-right:1px solid rgba(201,168,76,0.25);border-bottom:1px solid rgba(201,168,76,0.25);pointer-events:none;}
+  .hero-image-wrap{display:flex;justify-content:flex-end;position:relative;}
+  .hero-image-frame{width:380px;height:460px;position:relative;overflow:hidden;background:var(--slate2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+  .hero-placeholder-text{text-align:center;color:var(--text-muted);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;}
+  .hero-placeholder-icon{font-size:2rem;color:var(--border);display:block;margin-bottom:0.75rem;}
+  .photo-accent{position:absolute;bottom:-1px;right:-1px;width:60%;height:60%;border-right:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);pointer-events:none;}
 
   /* SECTION LABELS */
   .section-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem;opacity:0.85;}
   .section-title{font-family:'Roboto Serif',serif;font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:300;line-height:1.2;margin-bottom:1.2rem;color:var(--offwhite);}
   .section-divider{width:2rem;height:1px;background:var(--gold);opacity:0.5;margin-bottom:2.5rem;}
 
-  /* WHAT I DO */
-  #disciplines{background:var(--slate2);}
-  .disciplines-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;}
-  .discipline{background:var(--slate2);padding:2.5rem 2rem;transition:background 0.3s;}
-  .discipline:hover{background:var(--warm);}
-  .discipline-icon{font-size:1.4rem;margin-bottom:1.2rem;display:block;}
-  .discipline-title{font-family:'Roboto Serif',serif;font-size:1.1rem;font-weight:400;color:var(--offwhite);margin-bottom:0.8rem;}
-  .discipline-desc{font-size:0.88rem;color:var(--text-muted);line-height:1.8;}
+  /* PRACTICE SECTIONS */
+  .practice{padding:7rem 3rem;}
+  .practice-financial{background:var(--slate2);}
+  .practice-construction{background:var(--slate);}
+  .practice-container{max-width:1080px;margin:0 auto;}
+
+  /* PRACTICE HEADER */
+  .practice-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:0.6rem;}
+  .practice-number{font-size:1.2rem;letter-spacing:0.25em;color:var(--gold);opacity:0.6;}
+  .practice-title{font-family:'Roboto Serif',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;color:var(--offwhite);line-height:1.2;}
+  .practice-tag{display:inline-block;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem;opacity:0.8;padding:0;}
+  .practice-rule{width:2rem;height:1px;background:var(--gold);opacity:0.4;margin-bottom:2.5rem;}
+
+  /* FULL WIDTH COPY */
+  .practice-copy{column-count:2;column-gap:4rem;margin-bottom:3rem;}
+  .practice-copy p{font-size:0.93rem;color:var(--text-light);line-height:1.95;margin-bottom:1.2rem;break-inside:avoid;}
+
+  /* PULL QUOTE */
+  .practice-pullquote{margin:2.5rem 0 3rem;}
+  .practice-pullquote p{font-size:1rem;color:var(--offwhite);font-weight:700;line-height:1.7;}
+
+  /* AREAS OF FOCUS */
+  .focus-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.2rem;}
+  .focus-list{list-style:none;}
+  .focus-list li{font-size:0.93rem;color:var(--text-light);padding:0.45rem 0;padding-left:1.2rem;position:relative;}
+  .focus-list li::before{content:'—';position:absolute;left:0;color:var(--gold);opacity:0.5;}
 
   /* VENTURES */
-  #ventures{background:var(--slate);}
+  #ventures{background:var(--charcoal);}
   .ventures-intro{font-size:0.95rem;color:var(--text-light);max-width:520px;line-height:1.8;margin-bottom:3rem;}
-  .ventures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+  .ventures-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
   .venture-card{background:var(--slate2);border:1px solid var(--border);padding:2rem 2rem 1.8rem;text-decoration:none;display:block;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden;}
   .venture-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px);}
   .venture-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height 0.4s;}
   .venture-card:hover::before{height:100%;}
-  .venture-tag{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;opacity:0.8;}
-  .venture-name{font-family:'Roboto Serif',serif;font-size:1.15rem;font-weight:400;color:var(--offwhite);margin-bottom:0.6rem;}
+  .venture-name{font-family:'Roboto Serif',serif;font-size:1.1rem;font-weight:400;color:var(--offwhite);margin-bottom:0.6rem;}
   .venture-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.2rem;}
   .venture-link{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.5rem;}
   .venture-link::after{content:'→';transition:transform 0.3s;}
   .venture-card:hover .venture-link::after{transform:translateX(4px);}
-  .venture-soon{display:inline-block;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:rgba(201,168,76,0.1);color:var(--gold);border:1px solid rgba(201,168,76,0.25);padding:0.2rem 0.6rem;margin-left:0.6rem;vertical-align:middle;}
 
   /* BIO */
   #bio{background:var(--slate2);}
-  .bio-inner{display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start;}
-  .bio-aside{position:sticky;top:7rem;}
-  .bio-aside-name{font-family:'Roboto Serif',serif;font-size:1.3rem;font-weight:300;color:var(--offwhite);line-height:1.4;margin-bottom:1rem;}
-  .bio-aside-loc{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);}
-  .bio-aside-loc span{color:var(--gold);}
+  .bio-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start;}
+  .bio-photo-frame{width:100%;aspect-ratio:3/4;overflow:hidden;}
+  .bio-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);}
   .bio-text p{color:var(--text-light);font-size:0.97rem;line-height:1.95;margin-bottom:1.3rem;}
   .bio-text p:first-of-type{font-size:1.05rem;color:var(--offwhite);}
   .bio-contact{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);}
-  .bio-contact-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.4rem;}
-  .bio-contact-value{font-size:0.95rem;color:var(--gold);}
+  .bio-contact-label{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;}
+  .contact-item{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.85rem;}
+  .contact-icon{width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;opacity:0.7;}
+  .contact-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  .contact-value{font-size:0.92rem;color:var(--text-light);}
 
   /* FOOTER */
   footer{background:var(--charcoal);padding:2rem 3rem;border-top:1px solid var(--border);}
-  .footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
-  .footer-name{font-family:'Roboto Serif',serif;font-size:0.9rem;font-weight:300;color:var(--offwhite);}
-  .footer-copy{font-size:0.72rem;color:var(--text-muted);}
+  .footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:center;}
+  .footer-copy{font-size:0.72rem;color:var(--text-muted);text-align:center;}
 
   @media(max-width:768px){
     nav{padding:1rem 1.5rem;}
     .nav-links{display:none;}
-    section{padding:4rem 1.5rem;}
-    .hero-inner,.disciplines-grid,.ventures-grid,.bio-inner{grid-template-columns:1fr;}
-    .hero-photo-wrap{display:none;}
-    .footer-inner{flex-direction:column;gap:1rem;text-align:center;}
+    section,.practice{padding:4rem 1.5rem;}
+    .hero-inner,.ventures-grid,.bio-inner,.focus-grid{grid-template-columns:1fr;}
+    .hero-image-wrap{display:none;}
+    .practice-copy{column-count:1;}
   }
 </style>
 </head>
@@ -118,7 +133,7 @@
 <nav>
   <div class="nav-brand">Luis Andres <span>Ixta</span></div>
   <ul class="nav-links">
-    <li><a href="#disciplines">What I Do</a></li>
+    <li><a href="#practice-financial">What I Do</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#bio">About</a></li>
     <li><a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank">Book a Call</a></li>
@@ -129,19 +144,24 @@
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <div>
-        <p class="hero-eyebrow">Financial Consultant · Designer · Builder</p>
-        <h1 class="hero-name">Luis Andres<br/>Ixta</h1>
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span>Financial Strategy</span>
+          <span style="color:var(--text-light);">Operational Consulting</span>
+          <span style="color:var(--text-light);">Construction</span>
+        </p>
         <div class="hero-divider"></div>
-        <p class="hero-desc">I help people <em>build wealth, live intentionally,</em> and <em>create things that last</em> — through financial strategy, design, and a relentless focus on what actually moves the needle.</p>
+        <h1 class="hero-tagline">I help business owners and high earners <em>protect capital, reduce tax exposure,</em> and build the <em>operational infrastructure to scale.</em></h1>
         <div class="hero-actions">
-          <a href="#ventures" class="btn-primary">Explore My Work</a>
-          <a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank" class="btn-ghost">Book a Call</a>
+          <a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank" class="btn-primary">Book a Call</a>
         </div>
       </div>
-      <div class="hero-photo-wrap">
-        <div class="hero-photo-frame">
-          <img src="https://drive.google.com/uc?export=view&id=1QW9JBIYKleMHL2dyVbcsCuhUclpHQI33" alt="Luis Andres Ixta"/>
+      <div class="hero-image-wrap">
+        <div class="hero-image-frame">
+          <div class="hero-placeholder-text">
+            <span class="hero-placeholder-icon">⬜</span>
+            Hero Image
+          </div>
         </div>
         <div class="photo-accent"></div>
       </div>
@@ -149,31 +169,75 @@
   </div>
 </section>
 
-<!-- WHAT I DO -->
-<section id="disciplines">
-  <div class="container">
-    <p class="section-label">What I Do</p>
-    <h2 class="section-title">Three Disciplines, One Direction</h2>
-    <div class="section-divider"></div>
-    <div class="disciplines-grid">
-      <div class="discipline">
-        <span class="discipline-icon">◈</span>
-        <h3 class="discipline-title">Financial Consulting</h3>
-        <p class="discipline-desc">Debt elimination, tax mitigation, and retirement optimization for high-income professionals and business owners who want to keep more of what they earn.</p>
+<!-- PRACTICE 01: FINANCIAL -->
+<div class="practice practice-financial" id="practice-financial">
+  <div class="practice-container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div>
+        <h2 class="practice-title">Financial & Business Consulting</h2>
+        <div style="margin-top:0.4rem;margin-bottom:2rem;"><span class="practice-tag">Live. Build. Prosper. LLC</span></div>
+        <div class="practice-rule"></div>
+        <div class="practice-copy" style="column-count:1;">
+          <p>Most people are living so they can build. The problem is that building without the right structure doesn't produce prosperity — it produces more work.</p>
+          <p>Small business owners know this. The focus goes to growth and revenue, but the structural knowledge required to actually get there — tax exposure, entity design, debt strategy — gets skipped. The result is learning by loss.</p>
+          <p>The work here is simple: identify what's missing and build the right structure for your size, your goals, and your situation. Most people never reach prosperity because they never stopped to build deliberately. That's the only thing worth fixing.</p>
+        </div>
+        <div class="practice-pullquote">
+          <p>Most people never reach prosperity because they never stopped to build deliberately. That's the only thing worth fixing.</p>
+        </div>
+        <p class="focus-label">Areas of Focus</p>
+        <ul class="focus-list">
+          <li>Tax mitigation & strategy</li>
+          <li>Debt elimination & mortgage acceleration</li>
+          <li>Retirement optimization</li>
+        </ul>
       </div>
-      <div class="discipline">
-        <span class="discipline-icon">◻</span>
-        <h3 class="discipline-title">Design</h3>
-        <p class="discipline-desc">Thoughtful design work through Studio Ixta — visual identity, space, and brand systems built with the same precision I bring to financial strategy.</p>
-      </div>
-      <div class="discipline">
-        <span class="discipline-icon">◇</span>
-        <h3 class="discipline-title">Consulting</h3>
-        <p class="discipline-desc">Business structuring, operational strategy, and advisory work for entrepreneurs and professionals building something worth building.</p>
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <div style="width:100%;aspect-ratio:4/5;background:var(--slate);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;color:var(--text-muted);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;">
+            <span style="font-size:2rem;color:var(--border);display:block;margin-bottom:0.75rem;">⬜</span>
+            Image Placeholder
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- PRACTICE 02: CONSTRUCTION -->
+<div class="practice practice-construction" id="practice-construction">
+  <div class="practice-container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <div style="width:100%;aspect-ratio:4/5;background:var(--slate2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;color:var(--text-muted);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;">
+            <span style="font-size:2rem;color:var(--border);display:block;margin-bottom:0.75rem;">⬜</span>
+            Image Placeholder
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="practice-title">Construction Project Management</h2>
+        <div style="margin-top:0.4rem;margin-bottom:2rem;"><span class="practice-tag">Active Practice</span></div>
+        <div class="practice-rule"></div>
+        <div class="practice-copy" style="column-count:1;">
+          <p>The same pattern shows up in construction. People are living, building — but the prosperity part gets lost somewhere between the contract and the closeout.</p>
+          <p>Missed deadlines. Scope that expands without explanation. Clients left wondering what they're paying for. The industry tolerated this long enough that it became the expectation. It doesn't have to.</p>
+          <p>Fair pricing, clear documentation, honest communication, and a commitment to finishing what you started. A project delivered on time and on budget isn't exceptional. It's what was agreed to. That's the standard.</p>
+        </div>
+        <div class="practice-pullquote">
+          <p>A project delivered on time and on budget isn't exceptional. It's what was agreed to. That's the standard.</p>
+        </div>
+        <p class="focus-label">Areas of Focus</p>
+        <ul class="focus-list">
+          <li>Project oversight & delivery</li>
+          <li>Capital stewardship & cost control</li>
+          <li>Contractor & vendor coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- VENTURES -->
 <section id="ventures">
@@ -181,24 +245,21 @@
     <p class="section-label">Ventures</p>
     <h2 class="section-title">Where to Find Me</h2>
     <div class="section-divider"></div>
-    <p class="ventures-intro">Each of these represents a different dimension of the work — all connected by the same commitment to quality, clarity, and results.</p>
+    <p class="ventures-intro">Two active practices, one design studio in development. All connected by the same operating philosophy — build things that last.</p>
     <div class="ventures-grid">
       <a href="https://livebuildprosper.com" target="_blank" class="venture-card">
-        <p class="venture-tag">Financial Consulting</p>
         <h3 class="venture-name">Live. Build. Prosper. LLC</h3>
-        <p class="venture-desc">My financial consulting practice — helping clients eliminate debt, reduce taxes, and build lasting wealth through focused, personalized strategy.</p>
+        <p class="venture-desc">Through Live. Build. Prosper. LLC — tax mitigation, debt elimination, and wealth building for business owners and high earners.</p>
         <span class="venture-link">Visit Site</span>
       </a>
-      <a href="#" class="venture-card">
-        <p class="venture-tag">Design <span class="venture-soon">Coming Soon</span></p>
-        <h3 class="venture-name">Studio Ixta</h3>
-        <p class="venture-desc">A design practice for clients who understand that how something looks is as important as how it works. Reopening soon.</p>
-        <span class="venture-link">Coming Soon</span>
+      <a href="#bio" class="venture-card">
+        <h3 class="venture-name">Construction Project Management</h3>
+        <p class="venture-desc">Active project management at the capital and infrastructure level. Available for select engagements — inquire directly.</p>
+        <span class="venture-link">Get in Touch</span>
       </a>
       <a href="https://livebuildprosperllc.pipedrive.com/scheduler/M9mvWOiq/chat-with-luis" target="_blank" class="venture-card">
-        <p class="venture-tag">Work Together</p>
         <h3 class="venture-name">Book a Call</h3>
-        <p class="venture-desc">If you're a CPA, realtor, or professional curious about working together — or a client ready to take the next step — let's talk.</p>
+        <p class="venture-desc">CPA, EA, realtor, or professional curious about working together — or a client ready to take the next step. Let's talk.</p>
         <span class="venture-link">Schedule a Time</span>
       </a>
     </div>
@@ -209,18 +270,32 @@
 <section id="bio">
   <div class="container">
     <div class="bio-inner">
-      <div class="bio-aside">
-        <p class="section-label">About</p>
-        <h2 class="bio-aside-name">Luis Andres Ixta</h2>
-        <p class="bio-aside-loc">San Fernando Valley<br/><span>California</span></p>
+      <div>
+        <div class="bio-photo-frame">
+          <img src="https://drive.google.com/uc?export=view&id=1QW9JBIYKleMHL2dyVbcsCuhUclpHQI33" alt="Luis Andres Ixta"/>
+        </div>
       </div>
-      <div class="bio-text">
-        <p>I'm a financial consultant, designer, and builder based in the San Fernando Valley. My work sits at the intersection of strategy and craft — whether I'm helping a homeowner accelerate their mortgage payoff or building a brand identity from the ground up.</p>
-        <p>My consulting practice, Live. Build. Prosper. LLC, focuses on three things that move the needle for high-income professionals: paying off debt faster, reducing tax liability, and building retirement wealth. I work closely with CPAs, realtors, and mortgage professionals to make sure every strategy is coordinated and complete.</p>
-        <p>Outside of financial consulting, I run Studio Ixta — a design practice currently being relaunched. I believe that design and finance are closer than most people think. Both are about making smart decisions with limited resources to build something that endures.</p>
+      <div>
+        <p class="section-label">About</p>
+        <h2 class="section-title">Luis Andres Ixta</h2>
+        <div class="section-divider"></div>
+        <div class="bio-text">
+          <p>Luis Andres Ixta is a financial strategist and operational consultant based in the San Fernando Valley. Through Live. Build. Prosper. LLC, he works with business owners and high earners on tax mitigation, mortgage acceleration, and the structural decisions that compound over time. A parallel construction project management practice keeps the work grounded — he manages complexity at the capital and infrastructure level, not just the advisory one.</p>
+        </div>
         <div class="bio-contact">
-          <p class="bio-contact-label">Get in touch</p>
-          <p class="bio-contact-value">luis@luisandresixta.com</p>
+          <p class="bio-contact-label">Get in Touch</p>
+          <div class="contact-item">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </span>
+            <span class="contact-value">luis@luisandresixta.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.99 1.18 2 2 0 012.98 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <span class="contact-value">(213) 832-2240</span>
+          </div>
         </div>
       </div>
     </div>
@@ -229,8 +304,7 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-name">Luis Andres Ixta</span>
-    <span class="footer-copy">© 2025 · San Fernando Valley, CA · All rights reserved</span>
+    <span class="footer-copy">© 2025 Live. Build. Prosper. LLC · All rights reserved</span>
   </div>
 </footer>
 
